@@ -48,6 +48,17 @@ terminal:
 Restart Calc if it was already open. The function then appears under the **Eurostat** category
 in the Function Wizard.
 
+## Demo
+
+`demo/Eurostat-Demo.ods` is a real spreadsheet with several `EUROSTATDATA(...)` formulas already
+entered and computed against live Eurostat data — open it to see the function working without
+typing anything (it needs the add-in installed first, see above, or the formulas show `#NAME?`).
+It also demonstrates the error path with an unknown dataset code.
+
+It was generated with `tools/BuildDemoSheet.java`, which drives a headless Calc instance over
+the UNO API to enter the formulas, recalculate, and save the file — useful as a worked example of
+scripting Calc from Java, and to regenerate the demo after changing the add-in.
+
 ## Usage
 
 ```
