@@ -1,5 +1,7 @@
 # Eurostat Data for Calc
 
+[![Release](https://img.shields.io/github/v/release/davidjayjackson/java_eurostats)](https://github.com/davidjayjackson/java_eurostats/releases/latest)
+
 A LibreOffice Calc add-in that adds a spreadsheet function, `EUROSTATDATA`, for pulling data
 straight from the [Eurostat](https://ec.europa.eu/eurostat) REST API (JSON-stat 2.0 format)
 into a sheet.
@@ -38,11 +40,18 @@ somewhere other than `/home/davidj/libreoffice26.2` and `/home/davidj/jdks/jdk8u
 
 ## Installing
 
-Either double-click `build/EurostatAddin.oxt` to open it in the Extension Manager, or from a
-terminal:
+**Prebuilt:** grab `EurostatAddin.oxt` from the
+[latest release](https://github.com/davidjayjackson/java_eurostats/releases/latest) — no build
+step needed.
+
+**From source:** build it yourself with `./build.sh` (see above), which produces the same file at
+`build/EurostatAddin.oxt`.
+
+Either way, install it by double-clicking the `.oxt` to open it in the Extension Manager, or from
+a terminal:
 
 ```bash
-/path/to/libreoffice/program/unopkg add build/EurostatAddin.oxt
+/path/to/libreoffice/program/unopkg add EurostatAddin.oxt
 ```
 
 Restart Calc if it was already open. The function then appears under the **Eurostat** category
@@ -50,10 +59,12 @@ in the Function Wizard.
 
 ## Demo
 
-`demo/Eurostat-Demo.ods` is a real spreadsheet with several `EUROSTATDATA(...)` formulas already
-entered and computed against live Eurostat data — open it to see the function working without
-typing anything (it needs the add-in installed first, see above, or the formulas show `#NAME?`).
-It also demonstrates the error path with an unknown dataset code.
+`demo/Eurostat-Demo.ods` (also attached to the
+[release](https://github.com/davidjayjackson/java_eurostats/releases/latest)) is a real
+spreadsheet with several `EUROSTATDATA(...)` formulas already entered and computed against live
+Eurostat data — open it to see the function working without typing anything (it needs the add-in
+installed first, see above, or the formulas show `#NAME?`). It also demonstrates the error path
+with an unknown dataset code.
 
 It was generated with `tools/BuildDemoSheet.java`, which drives a headless Calc instance over
 the UNO API to enter the formulas, recalculate, and save the file — useful as a worked example of
