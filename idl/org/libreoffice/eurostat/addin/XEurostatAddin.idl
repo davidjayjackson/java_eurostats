@@ -1,0 +1,13 @@
+module org { module libreoffice { module eurostat { module addin {
+
+    /// Custom UNO interface for the Eurostat Calc add-in's spreadsheet function.
+    interface XEurostatAddin : com::sun::star::uno::XInterface
+    {
+        /// Fetches Eurostat JSON-stat 2.0 data for a dataset (optionally filtered by
+        /// dimension) and returns it as a table: a header row (dimension ids plus
+        /// "value"), followed by one row per observation. On failure, returns a
+        /// single-cell table containing a human-readable "#ERROR: ..." message.
+        sequence< sequence< any > > getEurostatData( [in] string datasetCode, [in] string filters );
+    };
+
+}; }; }; };
