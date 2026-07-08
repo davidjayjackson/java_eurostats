@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oor:component-data
+    xmlns:oor="http://openoffice.org/2001/registry"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    oor:name="CalcAddIns" oor:package="org.openoffice.Office">
+  <node oor:name="AddInInfo">
+    <node oor:name="org.libreoffice.eurostat.addin.EurostatAddin$_EurostatAddin" oor:op="replace">
+      <node oor:name="AddInFunctions">
+
+        <!-- =EUROSTATDATA(datasetCode; filters) -->
+        <node oor:name="getEurostatData" oor:op="replace">
+          <prop oor:name="DisplayName">
+            <value xml:lang="en">EUROSTATDATA</value>
+          </prop>
+          <prop oor:name="Description">
+            <value xml:lang="en">Fetches Eurostat data for a dataset and returns a table (header row plus one row per observation).</value>
+          </prop>
+          <prop oor:name="Category">
+            <value>Add-In</value>
+          </prop>
+          <prop oor:name="CompatibilityName">
+            <value xml:lang="en">EUROSTATDATA</value>
+          </prop>
+          <node oor:name="Parameters">
+            <node oor:name="datasetCode" oor:op="replace">
+              <prop oor:name="DisplayName">
+                <value xml:lang="en">DatasetCode</value>
+              </prop>
+              <prop oor:name="Description">
+                <value xml:lang="en">Eurostat dataset code, e.g. nama_10_gdp</value>
+              </prop>
+            </node>
+            <node oor:name="filters" oor:op="replace">
+              <prop oor:name="DisplayName">
+                <value xml:lang="en">Filters</value>
+              </prop>
+              <prop oor:name="Description">
+                <value xml:lang="en">Optional dimension filters as key=value pairs separated by ';', e.g. geo=DE;time=2023</value>
+              </prop>
+            </node>
+          </node>
+        </node>
+
+      </node>
+    </node>
+  </node>
+</oor:component-data>

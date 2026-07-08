@@ -54,10 +54,13 @@ cat > "$STAGE/META-INF/manifest.xml" <<'EOF'
                        manifest:full-path="EurostatAddin.uno.rdb"/>
  <manifest:file-entry manifest:media-type="application/vnd.sun.star.uno-components"
                        manifest:full-path="EurostatAddin.components"/>
+ <manifest:file-entry manifest:media-type="application/vnd.sun.star.configuration-data"
+                       manifest:full-path="CalcAddIns.xcu"/>
 </manifest:manifest>
 EOF
 cp "$REPO/packaging/description.xml" "$STAGE/description.xml"
 cp "$REPO/packaging/EurostatAddin.components" "$STAGE/EurostatAddin.components"
+cp "$REPO/packaging/CalcAddIns.xcu" "$STAGE/CalcAddIns.xcu"
 cp "$GEN/EurostatAddin.uno.rdb" "$STAGE/EurostatAddin.uno.rdb"
 cp "$BUILD/EurostatAddin.uno.jar" "$STAGE/EurostatAddin.uno.jar"
 

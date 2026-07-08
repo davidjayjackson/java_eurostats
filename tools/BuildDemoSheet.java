@@ -69,7 +69,11 @@ public class BuildDemoSheet {
         XCalculatable calculatable = UnoRuntime.queryInterface(XCalculatable.class, doc);
         calculatable.calculateAll();
 
-        autofitColumns(sheet, 0, 9);
+        // Skip column A: it holds both the long instructional sentence in A2 (which should
+        // just overflow visually, like the title in A1 already does) and short data codes in
+        // the array-formula rows -- auto-fitting it to the sentence blew it out to 11+ inches
+        // and pushed every other column off-screen.
+        autofitColumns(sheet, 1, 9);
 
         System.out.println("Saving to " + outputPath + " ...");
         java.io.File outFile = new java.io.File(outputPath).getAbsoluteFile();
