@@ -89,7 +89,12 @@ dynamic array support will spill automatically from a single cell).
 ```
 =EUROSTATDATA("nama_10_gdp"; "geo=DE;time=2023;unit=CP_MEUR")
 =EUROSTATDATA("une_rt_a"; "geo=FR;time=2023")
+=EUROSTATDATA("tec00118"; "geo=DE;sinceTimePeriod=2015")
 ```
+
+The last example uses `sinceTimePeriod`, one of Eurostat's own reserved query parameters (not a
+dimension) — useful for pulling a whole year range back in one call. `lastTimePeriod` works the
+same way. Any filter key you pass goes straight into the API query string.
 
 ## Common dataset codes
 
@@ -98,8 +103,9 @@ dynamic array support will spill automatically from a single cell).
 | `nama_10_gdp` | GDP and main components |
 | `une_rt_a` | Unemployment rate (annual) |
 | `demo_pjan` | Population on 1 January |
-| `prc_hicp_manr` | HICP inflation (annual rate) |
+| `prc_hicp_manr` | HICP inflation (annual rate, monthly) |
 | `tec00114` | Real GDP growth rate |
+| `tec00118` | HICP inflation (annual rate, yearly) |
 
 Browse the full catalogue at the [Eurostat Data Browser](https://ec.europa.eu/eurostat/databrowser/).
 
