@@ -78,7 +78,9 @@ scripting Calc from Java, and to regenerate the demo after changing the add-in.
 
 - `datasetCode` — a Eurostat dataset code, e.g. `nama_10_gdp`.
 - `filters` — optional dimension filters as `key=value` pairs separated by `;`, e.g.
-  `"geo=DE;time=2023;unit=CP_MEUR"`. Pass `""` for no filtering.
+  `"geo=DE;time=2023;unit=CP_MEUR"`. Pass `""` for no filtering. See the
+  [filters cheatsheet](docs/eurostat-filter-cheatsheet.pdf) for syntax, gotchas, reserved
+  parameters, and common dimension keys.
 
 Enter it as an array formula so the whole table spills out: select a range large enough for the
 result, type the formula, and confirm with **Ctrl+Shift+Enter** (recent LibreOffice versions with
