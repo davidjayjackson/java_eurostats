@@ -2,7 +2,7 @@
 <d:description xmlns:d="http://openoffice.org/extensions/description/2006"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
   <d:identifier value="org.libreoffice.eurostat.addin"/>
-  <d:version value="1.0.3"/>
+  <d:version value="1.0.4"/>
   <d:display-name>
     <d:name lang="en">Eurostat Data for Calc</d:name>
   </d:display-name>

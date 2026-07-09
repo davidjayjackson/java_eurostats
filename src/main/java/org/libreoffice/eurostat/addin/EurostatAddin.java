@@ -20,12 +20,17 @@ public class EurostatAddin {
 
     public static class _EurostatAddin extends com.sun.star.lib.uno.helper.WeakBase
             implements XEurostatAddin,
+                       com.sun.star.sheet.XAddIn,
                        com.sun.star.lang.XServiceName,
                        com.sun.star.lang.XServiceInfo
     {
         private static final String aServiceName = "org.libreoffice.eurostat.addin.EurostatAddin";
         private static final String aAddInServiceName = "com.sun.star.sheet.AddIn";
         private static final String aImplName = _EurostatAddin.class.getName();
+
+        private static final String FUNCTION_NAME = "getEurostatData";
+
+        private com.sun.star.lang.Locale aFuncLocale;
 
         public _EurostatAddin(com.sun.star.lang.XMultiServiceFactory xFactory) {
         }
@@ -92,6 +97,66 @@ public class EurostatAddin {
 
         private static Object[][] errorTable(String message) {
             return new Object[][] { { "#ERROR: " + message } };
+        }
+
+        // XAddIn
+
+        public String getProgrammaticFuntionName(String aDisplayName) {
+            return "EUROSTATDATA".equals(aDisplayName) ? FUNCTION_NAME : "";
+        }
+
+        public String getDisplayFunctionName(String aProgrammaticName) {
+            return FUNCTION_NAME.equals(aProgrammaticName) ? "EUROSTATDATA" : "";
+        }
+
+        public String getFunctionDescription(String aProgrammaticName) {
+            return FUNCTION_NAME.equals(aProgrammaticName)
+                    ? "Fetches Eurostat data for a dataset and returns a table (header row plus one row per observation)."
+                    : "";
+        }
+
+        public String getDisplayArgumentName(String aProgrammaticFunctionName, int nArgument) {
+            if (!FUNCTION_NAME.equals(aProgrammaticFunctionName)) {
+                return "";
+            }
+            if (nArgument == 0) {
+                return "DatasetCode";
+            }
+            if (nArgument == 1) {
+                return "Filters";
+            }
+            return "";
+        }
+
+        public String getArgumentDescription(String aProgrammaticFunctionName, int nArgument) {
+            if (!FUNCTION_NAME.equals(aProgrammaticFunctionName)) {
+                return "";
+            }
+            if (nArgument == 0) {
+                return "Eurostat dataset code, e.g. nama_10_gdp";
+            }
+            if (nArgument == 1) {
+                return "Optional dimension filters as key=value pairs separated by ';', e.g. geo=DE;time=2023";
+            }
+            return "";
+        }
+
+        public String getProgrammaticCategoryName(String aProgrammaticFunctionName) {
+            return "Eurostat";
+        }
+
+        public String getDisplayCategoryName(String aProgrammaticFunctionName) {
+            return "Eurostat";
+        }
+
+        // XLocalizable
+
+        public void setLocale(com.sun.star.lang.Locale aLocale) {
+            aFuncLocale = aLocale;
+        }
+
+        public com.sun.star.lang.Locale getLocale() {
+            return aFuncLocale;
         }
 
         // XServiceName
