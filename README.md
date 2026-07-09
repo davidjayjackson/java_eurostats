@@ -133,3 +133,7 @@ test/LiveCalcTest.java                                     end-to-end check agai
   recalculating blocks the UI while it runs — this isn't tunable from the sheet, only in
   `EurostatClient`.
 - Large datasets may need additional dimension filters to stay within response size limits.
+
+## License
+
+[MIT](LICENSE)
