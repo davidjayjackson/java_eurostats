@@ -6,6 +6,9 @@
   <d:display-name>
     <d:name lang="en">Eurostat Data for Calc</d:name>
   </d:display-name>
+  <d:icon>
+    <d:default xlink:href="icon.png"/>
+  </d:icon>
   <d:dependencies>
     <l:LibreOffice-minimal-version value="4.1" d:name="LibreOffice 4.1"
         xmlns:l="http://libreoffice.org/extensions/description/2011"/>

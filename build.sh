@@ -58,6 +58,7 @@ cat > "$STAGE/META-INF/manifest.xml" <<'EOF'
 EOF
 cp "$REPO/packaging/description.xml" "$STAGE/description.xml"
 cp "$REPO/packaging/EurostatAddin.components" "$STAGE/EurostatAddin.components"
+cp "$REPO/packaging/icon.png" "$STAGE/icon.png"
 cp "$GEN/EurostatAddin.uno.rdb" "$STAGE/EurostatAddin.uno.rdb"
 cp "$BUILD/EurostatAddin.uno.jar" "$STAGE/EurostatAddin.uno.jar"
 
