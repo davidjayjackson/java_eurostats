@@ -37,7 +37,17 @@ cell containing a readable `#ERROR: ...` message instead of a cryptic `Err:5xx`.
 
 This runs the LibreOffice SDK's own toolchain end to end — `unoidl-write` (compiles the custom
 UNO interface), `javamaker` (generates its Java stub), `javac`, `jar`, then zips everything into
-`build/EurostatAddin.oxt`. No Maven, no network access needed to build.
+`build/EurostatAddin-<version>.oxt`. No Maven, no network access needed to build.
+
+**Windows:** use the PowerShell equivalent instead:
+
+```powershell
+.\build.ps1
+```
+
+It auto-detects the LibreOffice install (`C:\Program Files\LibreOffice`) and a JDK 8+ (e.g.
+Eclipse Temurin under `C:\Program Files\Eclipse Adoptium`). Override either with the `LO_HOME` or
+`JDK` environment variables before running.
 
 Edit the `LO_HOME` and `JDK` variables at the top of `build.sh` if your LibreOffice or JDK live
 somewhere other than `/home/davidj/libreoffice26.2` and `/home/davidj/jdks/jdk8u492-b09`.

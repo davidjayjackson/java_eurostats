@@ -63,7 +63,10 @@ cp "$GEN/EurostatAddin.uno.rdb" "$STAGE/EurostatAddin.uno.rdb"
 cp "$BUILD/EurostatAddin.uno.jar" "$STAGE/EurostatAddin.uno.jar"
 
 echo "== 6/6: zip .oxt =="
-rm -f "$BUILD/EurostatAddin.oxt"
-(cd "$STAGE" && zip -rq -X "$BUILD/EurostatAddin.oxt" .)
+# Name the artifact after the version declared in description.xml.
+VERSION="$(sed -n 's/.*<d:version value="\([^"]*\)".*/\1/p' "$REPO/packaging/description.xml")"
+OXT="$BUILD/EurostatAddin${VERSION:+-$VERSION}.oxt"
+rm -f "$OXT"
+(cd "$STAGE" && zip -rq -X "$OXT" .)
 
-echo "Built $BUILD/EurostatAddin.oxt"
+echo "Built $OXT"
