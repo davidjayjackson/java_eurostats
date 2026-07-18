@@ -1,0 +1,67 @@
+<svg width="1280" height="360" viewBox="0 0 1280 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Eurostat Data for Calc banner">
+  <defs>
+    <linearGradient id="bbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b2f63"/>
+      <stop offset="1" stop-color="#0f1b3a"/>
+    </linearGradient>
+    <linearGradient id="bgold" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#dc9329"/>
+      <stop offset="1" stop-color="#f4bf52"/>
+    </linearGradient>
+    <linearGradient id="bblue" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#2f5fd0"/>
+      <stop offset="1" stop-color="#5b86f2"/>
+    </linearGradient>
+    <symbol id="bstar" viewBox="-16 -16 32 32" overflow="visible">
+      <path d="M0,-13 L3.8,-4 L13.5,-4 L5.7,2.3 L8.6,11.7 L0,6 L-8.6,11.7 L-5.7,2.3 L-13.5,-4 L-3.8,-4 Z"/>
+    </symbol>
+  </defs>
+
+  <rect width="1280" height="360" fill="url(#bbg)"/>
+
+  <!-- faint EU star arc, right side watermark -->
+  <g fill="#f4bf52" opacity="0.06">
+    <use href="#bstar" x="1120" y="90" width="120" height="120"/>
+    <use href="#bstar" x="1010" y="130" width="120" height="120"/>
+    <use href="#bstar" x="1170" y="220" width="120" height="120"/>
+  </g>
+
+  <!-- logo mark -->
+  <g transform="translate(80,68) scale(0.44)">
+    <rect x="16" y="16" width="480" height="480" rx="104" fill="#122145" stroke="#2b437f" stroke-width="3"/>
+    <g fill="#f4bf52">
+      <use href="#bstar" x="256" y="92" width="26" height="26"/>
+      <use href="#bstar" x="196" y="104" width="26" height="26"/>
+      <use href="#bstar" x="316" y="104" width="26" height="26"/>
+      <use href="#bstar" x="150" y="140" width="26" height="26"/>
+      <use href="#bstar" x="362" y="140" width="26" height="26"/>
+    </g>
+    <g fill="url(#bgold)">
+      <rect x="116" y="196" width="60" height="20" rx="6"/>
+      <rect x="116" y="196" width="20" height="60" rx="6"/>
+      <rect x="336" y="196" width="60" height="20" rx="6"/>
+      <rect x="376" y="196" width="20" height="60" rx="6"/>
+      <rect x="116" y="356" width="60" height="20" rx="6"/>
+      <rect x="116" y="316" width="20" height="60" rx="6"/>
+      <rect x="336" y="356" width="60" height="20" rx="6"/>
+      <rect x="376" y="316" width="20" height="60" rx="6"/>
+    </g>
+    <rect x="166" y="300" width="34" height="52" rx="6" fill="url(#bgold)"/>
+    <rect x="212" y="268" width="34" height="84" rx="6" fill="url(#bgold)"/>
+    <rect x="258" y="236" width="34" height="116" rx="6" fill="url(#bgold)"/>
+    <rect x="304" y="200" width="34" height="152" rx="6" fill="url(#bblue)"/>
+    <rect x="156" y="358" width="200" height="6" rx="3" fill="#f4bf52" opacity="0.35"/>
+  </g>
+
+  <!-- wordmark -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <text x="330" y="150" font-size="66" font-weight="700" fill="#ffffff">Eurostat Data <tspan fill="#f4bf52">for Calc</tspan></text>
+    <text x="332" y="200" font-size="27" font-weight="400" fill="#aeb9d6">A LibreOffice Calc add-in for the Eurostat REST API</text>
+
+    <!-- formula chip -->
+    <g transform="translate(332,232)">
+      <rect x="0" y="0" width="586" height="56" rx="12" fill="#0c1631" stroke="#2b437f" stroke-width="1.5"/>
+      <text x="20" y="37" font-family="Consolas, Menlo, monospace" font-size="24" fill="#e7ecf7"><tspan fill="#5b86f2">=</tspan><tspan fill="#f4bf52">EUROSTATDATA</tspan>(<tspan fill="#8fe3a5">"nama_10_gdp"</tspan>; <tspan fill="#8fe3a5">"geo=DE"</tspan>)</text>
+    </g>
+  </g>
+</svg>

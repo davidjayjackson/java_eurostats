@@ -1,6 +1,10 @@
-# Eurostat Data for Calc
+<p align="center">
+  <img src="packaging/banner.png" alt="Eurostat Data for Calc" width="820">
+</p>
 
-[![Release](https://img.shields.io/github/v/release/davidjayjackson/java_eurostats)](https://github.com/davidjayjackson/java_eurostats/releases/latest)
+<p align="center">
+  <a href="https://github.com/davidjayjackson/java_eurostats/releases/latest"><img src="https://img.shields.io/github/v/release/davidjayjackson/java_eurostats" alt="Release"></a>
+</p>
 
 A LibreOffice Calc add-in that adds a spreadsheet function, `EUROSTATDATA`, for pulling data
 straight from the [Eurostat](https://ec.europa.eu/eurostat) REST API (JSON-stat 2.0 format)
