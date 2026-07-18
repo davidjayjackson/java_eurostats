@@ -44,8 +44,8 @@ somewhere other than `/home/davidj/libreoffice26.2` and `/home/davidj/jdks/jdk8u
 
 ## Installing
 
-**Prebuilt:** grab `EurostatAddin.oxt` from the
-[latest release](https://github.com/davidjayjackson/java_eurostats/releases/latest) — no build
+**Prebuilt:** grab `EurostatAddin-1.0.7.oxt` from the
+[v1.0.7 release](https://github.com/davidjayjackson/java_eurostats/releases/tag/v1.0.7) — no build
 step needed.
 
 **From source:** build it yourself with `./build.sh` (see above), which produces the same file at
@@ -55,7 +55,7 @@ Either way, install it by double-clicking the `.oxt` to open it in the Extension
 a terminal:
 
 ```bash
-/path/to/libreoffice/program/unopkg add EurostatAddin.oxt
+/path/to/libreoffice/program/unopkg add EurostatAddin-1.0.7.oxt
 ```
 
 Restart Calc if it was already open. The function then appears under the **Eurostat** category
@@ -64,7 +64,7 @@ in the Function Wizard.
 ## Demo
 
 `demo/Eurostat-Demo.ods` (also attached to the
-[release](https://github.com/davidjayjackson/java_eurostats/releases/latest)) is a real
+[v1.0.7 release](https://github.com/davidjayjackson/java_eurostats/releases/tag/v1.0.7)) is a real
 spreadsheet with several `EUROSTATDATA(...)` formulas already entered and computed against live
 Eurostat data — open it to see the function working without typing anything (it needs the add-in
 installed first, see above, or the formulas show `#NAME?`). It also demonstrates the error path
